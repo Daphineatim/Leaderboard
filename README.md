@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# To-do-list
+# LEADERBOARD
 
 This is a web site for storing books and authors.
 
@@ -40,7 +40,7 @@ to test or run the application double click on the `index.html` file to open in 
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page]().
+Feel free to check the [issues page](https://github.com/Daphineatim/Leaderboard/issues).
 
 ## Show your support
 
