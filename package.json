@@ -4,6 +4,7 @@
   "description": "This is a Microverse Module 2 JavaScript project. In this project, a leaderboard displays data from an API.",
   "private": true,
   "scripts": {
+    "start": "webpack --config webpack.config.js --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
