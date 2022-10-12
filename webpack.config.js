@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.js',
   mode: 'development',
-   devServer: {
+  devServer: {
     static: './dist',
   },
   plugins: [
@@ -17,7 +17,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-   module: {
+  module: {
     rules: [
       {
         test: /\.css$/i,
