@@ -1,5 +1,6 @@
 import Score from './score.js';
-const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BWGz2P57jaQba1AheDjm/scores/'
+
+const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BWGz2P57jaQba1AheDjm/scores/';
 
 const fetchAPI = async () => {
   const response = await fetch(apiURL);
