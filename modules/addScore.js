@@ -1,14 +1,43 @@
 import Score from './score.js';
+// fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
+//   method: 'POST',
+//   body: JSON.stringify({ 
+// 	"name": "My cool new game" 
+// }),
+//   headers: {
+//     'Content-type': 'application/json; charset=UTF-8',
+//   },
+// })
+//   .then((response) => response.json())
+//   .then((json) => console.log(json.result));
 
-const scores = [];
+const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BWGz2P57jaQba1AheDjm/scores/'
+const fetchAPI = async () => {
+  const response = await fetch(apiURL);
+  const result = await response.json();
+  return result;
+};
 
-const refresh = () => {
+const postAPI = async (newScore) => {
+  const score = await fetch(apiURL, {
+    method: 'POST',
+    body: JSON.stringify(newScore),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  return score.json;
+};
+
+const refresh = async () => {
   const scoreList = document.querySelector('.score-list');
+  const scores = await fetchAPI().then((result) => result);
+
   if (scores.length !== 0) {
     scoreList.innerHTML = '';
-    scores.forEach((item) => {
+    scores.result.forEach((item) => {
       const score = `
-      <li class="h4 p-2 m-0">${item.player}: ${item.score}</li>
+      <li class="h4 p-2 m-0">${item.user}: ${item.score}</li>
       `;
       scoreList.insertAdjacentHTML('beforeend', score);
     });
@@ -17,12 +46,13 @@ const refresh = () => {
 
 const addScore = () => {
   const form = document.querySelector('form');
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const { player, score } = form.elements;
-    const newScore = new Score(player.value, score.value);
-    scores.push(newScore);
-    refresh();
+    const { user, score } = form.elements;
+    const newScore = new Score(user.value, score.value);
+    await postAPI(newScore);
+    user.value = '';
+    score.value = '';
   });
 };
 
