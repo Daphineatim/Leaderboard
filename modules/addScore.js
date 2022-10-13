@@ -1,17 +1,6 @@
 import Score from './score.js';
-// fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
-//   method: 'POST',
-//   body: JSON.stringify({ 
-// 	"name": "My cool new game" 
-// }),
-//   headers: {
-//     'Content-type': 'application/json; charset=UTF-8',
-//   },
-// })
-//   .then((response) => response.json())
-//   .then((json) => console.log(json.result));
-
 const apiURL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/BWGz2P57jaQba1AheDjm/scores/'
+
 const fetchAPI = async () => {
   const response = await fetch(apiURL);
   const result = await response.json();
