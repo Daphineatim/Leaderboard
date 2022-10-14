@@ -5,7 +5,7 @@
 }
 
 body {
-  background: white;
+  background: linear-gradient(100deg, #e2c35d, #d88771);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: normal;
@@ -17,7 +17,7 @@ ul {
 }
 
 ul.score-list > li:nth-of-type(odd) {
-  background: #e0e0e0;
+  background: #e9d7d2;
 }
 
 .text-color {
