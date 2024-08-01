@@ -9,7 +9,7 @@ const fetchAPI = async () => {
 };
 
 const postAPI = async (newScore) => {
-  const score = await fetch(apiURL, {
+  const score = fetch(apiURL, {
     method: 'POST',
     body: JSON.stringify(newScore),
     headers: {
@@ -27,7 +27,7 @@ const refresh = async () => {
     scoreList.innerHTML = '';
     scores.result.forEach((item) => {
       const score = `
-      <li class="h4 p-2 m-0">${item.user}: ${item.score}</li>
+      <li class="h5 p-2 m-0 text-color">${item.user}: ${item.score}</li>
       `;
       scoreList.insertAdjacentHTML('beforeend', score);
     });
